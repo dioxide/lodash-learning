@@ -3,13 +3,14 @@ import createRange from './.internal/createRange.js'
 /**
  * This method is like `range` except that it populates values in
  * descending order.
+ * 类似与`range`,但其以降序来填充生成的值
  *
  * @since 4.0.0
  * @category Util
- * @param {number} [start=0] The start of the range.
- * @param {number} end The end of the range.
- * @param {number} [step=1] The value to increment or decrement by.
- * @returns {Array} Returns the range of numbers.
+ * @param {number} [start=0] The start of the range. 区间的开始
+ * @param {number} end The end of the range. 区间的结束
+ * @param {number} [step=1] The value to increment or decrement by. 要增加或减少的值
+ * @returns {Array} Returns the range of numbers. 区间的数字
  * @see inRange, range
  * @example
  *
@@ -34,6 +35,6 @@ import createRange from './.internal/createRange.js'
  * rangeRight(0)
  * // => []
  */
-const rangeRight = createRange(true)
+const rangeRight = createRange(true)  // 创建区间函数（指定其生成方向）
 
 export default rangeRight

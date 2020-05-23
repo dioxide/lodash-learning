@@ -7,11 +7,12 @@ const nodeIsDate = nodeTypes && nodeTypes.isDate
 
 /**
  * Checks if `value` is classified as a `Date` object.
+ * 检查`value`是否归类为`Date`对象
  *
  * @since 0.1.0
  * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a date object, else `false`.
+ * @param {*} value The value to check. 要检查的值
+ * @returns {boolean} Returns `true` if `value` is a date object, else `false`. 若是则返回true，否则返回false
  * @example
  *
  * isDate(new Date)
@@ -21,7 +22,7 @@ const nodeIsDate = nodeTypes && nodeTypes.isDate
  * // => false
  */
 const isDate = nodeIsDate
-  ? (value) => nodeIsDate(value)
+  ? (value) => nodeIsDate(value)  // Node.js 环境下
   : (value) => isObjectLike(value) && getTag(value) == '[object Date]'
 
 export default isDate

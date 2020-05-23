@@ -7,11 +7,12 @@ const nodeIsSet = nodeTypes && nodeTypes.isSet
 
 /**
  * Checks if `value` is classified as a `Set` object.
+ * 检查`value`是否被归类为`Set`对象
  *
  * @since 4.3.0
  * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a set, else `false`.
+ * @param {*} value The value to check. 要检查的值
+ * @returns {boolean} Returns `true` if `value` is a set, else `false`. 若是则返回true
  * @example
  *
  * isSet(new Set)
@@ -21,7 +22,7 @@ const nodeIsSet = nodeTypes && nodeTypes.isSet
  * // => false
  */
 const isSet = nodeIsSet
-  ? (value) => nodeIsSet(value)
+  ? (value) => nodeIsSet(value) // Node.js 环境下
   : (value) => isObjectLike(value) && getTag(value) == '[object Set]'
 
 export default isSet

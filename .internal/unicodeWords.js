@@ -1,4 +1,4 @@
-/** Used to compose unicode character classes. */
+/** Used to compose unicode character classes. 用来组合unicode字符类 */
 const rsAstralRange = '\\ud800-\\udfff'
 const rsComboMarksRange = '\\u0300-\\u036f'
 const reComboHalfMarksRange = '\\ufe20-\\ufe2f'
@@ -16,7 +16,7 @@ const rsUpperRange = 'A-Z\\xc0-\\xd6\\xd8-\\xde'
 const rsVarRange = '\\ufe0e\\ufe0f'
 const rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange
 
-/** Used to compose unicode capture groups. */
+/** Used to compose unicode capture groups. 用来组合unicode捕获组 */
 const rsApos = "['\u2019]"
 const rsBreak = `[${rsBreakRange}]`
 const rsCombo = `[${rsComboRange}]`
@@ -32,7 +32,7 @@ const rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]'
 const rsUpper = `[${rsUpperRange}]`
 const rsZWJ = '\\u200d'
 
-/** Used to compose unicode regexes. */
+/** Used to compose unicode regexes. 用来组合unicode正则表达式 */
 const rsMiscLower = `(?:${rsLower}|${rsMisc})`
 const rsMiscUpper = `(?:${rsUpper}|${rsMisc})`
 const rsOptContrLower = `(?:${rsApos}(?:d|ll|m|re|s|t|ve))?`
@@ -58,13 +58,14 @@ const reUnicodeWords = RegExp([
 
 /**
  * Splits a Unicode `string` into an array of its words.
+ * 将Unicode字符串`string`拆分到有其字组成的数组中
  *
  * @private
- * @param {string} The string to inspect.
- * @returns {Array} Returns the words of `string`.
+ * @param {string} The string to inspect. 要检查的字符串
+ * @returns {Array} Returns the words of `string`.  字组成的数组
  */
 function unicodeWords(string) {
-  return string.match(reUnicodeWords)
+  return string.match(reUnicodeWords) // 直接使用组合好的正则进行处理
 }
 
 export default unicodeWords

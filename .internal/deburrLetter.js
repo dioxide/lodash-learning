@@ -1,6 +1,6 @@
 import basePropertyOf from './basePropertyOf.js'
 
-/** Used to map Latin Unicode letters to basic Latin letters. */
+/** Used to map Latin Unicode letters to basic Latin letters. 用来映射拉丁Unicode字母到基本拉丁字母 */
 const deburredLetters = {
   // Latin-1 Supplement block.
   '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
@@ -61,11 +61,12 @@ const deburredLetters = {
 /**
  * Used by `deburr` to convert Latin-1 Supplement and Latin Extended-A
  * letters to basic Latin letters.
+ * 供`deburr`使用以将Latin-1 Supplement和Latin Extended-A字母转换到基本拉丁字母
  *
  * @private
- * @param {string} letter The matched letter to deburr.
- * @returns {string} Returns the deburred letter.
+ * @param {string} letter The matched letter to deburr. 要处理的字母
+ * @returns {string} Returns the deburred letter. 处理过的字母
  */
-const deburrLetter = basePropertyOf(deburredLetters)
+const deburrLetter = basePropertyOf(deburredLetters)  // 借调basePropertyOf返回字母映射表中的值
 
 export default deburrLetter

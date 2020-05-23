@@ -7,11 +7,12 @@ const nodeIsMap = nodeTypes && nodeTypes.isMap
 
 /**
  * Checks if `value` is classified as a `Map` object.
+ * 检查`value`是否归类为`Map`对象
  *
  * @since 4.3.0
  * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a map, else `false`.
+ * @param {*} value The value to check. 要检查的值
+ * @returns {boolean} Returns `true` if `value` is a map, else `false`. 若是则返回true，否则返回false
  * @example
  *
  * isMap(new Map)
@@ -21,7 +22,7 @@ const nodeIsMap = nodeTypes && nodeTypes.isMap
  * // => false
  */
 const isMap = nodeIsMap
-  ? (value) => nodeIsMap(value)
+  ? (value) => nodeIsMap(value) // node.js 环境
   : (value) => isObjectLike(value) && getTag(value) == '[object Map]'
 
 export default isMap
